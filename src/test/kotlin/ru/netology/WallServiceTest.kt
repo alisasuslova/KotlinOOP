@@ -3,8 +3,14 @@ package ru.netology
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.Before
 
 class WallServiceTest {
+
+    @Before
+    fun clearBeforeTest() {
+        WallService.clear()
+    }
 
     @Test
     fun add() {
@@ -21,7 +27,7 @@ class WallServiceTest {
             )
         )
 
-        assertEquals(2, result.postId)
+        assertEquals(1, result.postId)
     }
 
     @Test
@@ -50,7 +56,8 @@ class WallServiceTest {
             )
         )
 
-        assertEquals(true, result)
+        //assertEquals(true, result)
+        assertTrue(result)
     }
 
     @Test
@@ -67,7 +74,8 @@ class WallServiceTest {
                 likes = Likes(10)
             )
         )
-        assertEquals(false, result)
+        //assertEquals(false, result)
+        assertFalse(result)
     }
 
 }

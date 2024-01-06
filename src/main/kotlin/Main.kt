@@ -43,6 +43,11 @@ object WallService {
         }
         println()
     }
+
+    fun clear() {
+        posts = emptyArray()
+        lastPostId = 0
+    }
 }
 
 
